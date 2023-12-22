@@ -10,6 +10,6 @@ Sistema de inventario, facturacion y gestor de documentos, en contenedor docker
 
 3. cd ./inventario
 
-4. docker compose exec app artisan serve
+4. docker compose exec app php artisan serve
 
 5. docker compose exec app php artisan migrate
