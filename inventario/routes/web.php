@@ -20,12 +20,7 @@ Route::get('/', function () {
 
 
 Route::get('/login', [SessionController::class, 'create'])->name('login');
+Route::post('/login', [SessionController::class, 'store']);
 
 Route::get('/register', [RegisterController::class, 'create'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
-Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth');

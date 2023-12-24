@@ -16,8 +16,8 @@ Sistema de inventario, facturacion y gestor de documentos, en contenedor docker
 
 Addons recomendados para VSC
 
-PHP intelephense
-Laravel snippets
-Laravel blade formatter
-Laravel blade snippets
-Laravel goto view
+1. PHP intelephense
+2. Laravel snippets
+3. Laravel blade formatter
+4. Laravel blade snippets
+5. Laravel goto view

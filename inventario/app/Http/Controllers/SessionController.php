@@ -31,7 +31,7 @@ class SessionController extends Controller
         // Attempt to authenticate and log in the user
         if (auth()->attempt($attributes)) {
             // Redirect to the dashboard
-            return redirect('/dashboard');
+            return redirect('/');
         }
 
         // Redirect back with a message
