@@ -8,10 +8,16 @@
 </head>
 <body>
     <nav>
+        @if (Auth::check())
+            <ul>
+                <li><a href="{{ route('logout') }}">Cerrar sesión de {{ Auth::user()->name }}</a></li>
+            </ul>    
+        @else
         <ul>
                 <li><a href="{{ route('login') }}">Login</a></li>
                 <li><a href="{{ route('register') }}">Registro</a></li>
         </ul>
+        @endif
     </nav>
     @yield('content')
 
