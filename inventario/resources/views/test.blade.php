@@ -1,1 +1,0 @@
-Vista de prueba en php laravel
