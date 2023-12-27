@@ -11,15 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('provedorees_table', function (Blueprint $table) {
+        Schema::create('provedors', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('descripcion')->nullable();
             $table->string('direccion');
             $table->string('telefono');
             $table->string('email');
-            $table->string('contacto');
-            $table->string('notas');
+            $table->boolean('estado')->default(true);
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            $table->foreignId('user_id')->references('id')->on('users');
         });
     }
 
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('provedorees_table');
+        Schema::dropIfExists('provedors');
     }
 };

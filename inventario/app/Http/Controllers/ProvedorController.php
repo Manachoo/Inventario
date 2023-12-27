@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\provedorees;
+use App\Models\Provedor;
 
 use Illuminate\Http\Request;
 
@@ -9,8 +9,8 @@ class ProvedorController extends Controller
 {
     public function index()
     {
-        $provedores = provedorees::all();
-        return view('provedores.index')->with('provedores', $provedores);
+        $provedores = provedor::all();
+        return view('provedor.index')->with('provedor', $provedores);
     }
 
     public function create()
@@ -20,7 +20,7 @@ class ProvedorController extends Controller
 
     public function store(Request $request)
     {
-        $provedor = new provedorees();
+        $provedor = new provedor();
         $provedor->nombre = $request->get('nombre');
         $provedor->direccion = $request->get('direccion');
         $provedor->telefono = $request->get('telefono');
@@ -32,13 +32,13 @@ class ProvedorController extends Controller
 
     public function edit($id)
     {
-        $provedor = provedorees::find($id);
+        $provedor = provedor::find($id);
         return view('provedores.edit')->with('provedor', $provedor);
     }
 
     public function update(Request $request, $id)
     {
-        $provedor = provedorees::find($id);
+        $provedor = provedor::find($id);
         $provedor->nombre = $request->get('nombre');
         $provedor->direccion = $request->get('direccion');
         $provedor->telefono = $request->get('telefono');
@@ -50,7 +50,7 @@ class ProvedorController extends Controller
 
     public function destroy($id)
     {
-        $provedor = provedorees::find($id);
+        $provedor = provedor::find($id);
         $provedor->delete();
 
         return redirect('/provedores');
@@ -58,7 +58,7 @@ class ProvedorController extends Controller
 
     public function show($id)
     {
-        $provedor = provedorees::find($id);
+        $provedor = provedor::find($id);
         return view('provedores.show')->with('provedor', $provedor);
     }
 }
