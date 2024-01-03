@@ -19,10 +19,9 @@ return new class extends Migration
             $table->decimal('precio', 8, 2);
             $table->date('fecha');
             $table->boolean('estado')->default(true);
-            $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
-            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->constrained();
         });
     }
 
