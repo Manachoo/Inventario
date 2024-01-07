@@ -14,7 +14,9 @@ Sistema de inventario, facturacion y gestor de documentos, en contenedor docker
 
 5. docker compose exec app php artisan migrate //para levantar la base de datos
 
-6. docker compose exec app php artisan make:model Provedor -m //para crear un modelo con su migracion
+6. docker compose exec app npm run dev //para levantar servidor de tailwind
+
+7. docker compose exec app php artisan make:model Provedor -m //para crear un modelo con su migracion
 
 Addons recomendados para VSC
 
@@ -23,3 +25,5 @@ Addons recomendados para VSC
 3. Laravel blade formatter
 4. Laravel blade snippets
 5. Laravel goto view
+6. Laravel goto controller
+7. tailwind css intellisense
